@@ -1,3 +1,44 @@
+@import '../components/vars.scss';
+
 body {
-  background-color: blue;
+  background-color: #111213ff;
+  color: #ffffffff;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 4vh 2vw;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'label-slider slider' 'label-slider radio';
+}
+
+.labels {
+  grid-area: label-slider;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  grid-area: slider;
+}
+
+input {
+  grid-area: radio;
+}
+
+input:checked + .slide {
+  display: block;
+}
+input:not(:checked) + .slide {
+  display: none;
+}
+label {
+  display: block;
+  width: 4rem;
+  cursor: pointer;
 }

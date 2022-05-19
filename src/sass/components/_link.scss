@@ -1,0 +1,16 @@
+@import './vars.scss';
+
+a {
+  text-decoration: none;
+  color: $blue;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.displaynone {
+  display: none;
+  margin-left: -100vw;
+}
