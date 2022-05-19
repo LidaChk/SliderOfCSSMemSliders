@@ -1,0 +1,11 @@
+/D:/GitHub/SliderOfCSSMemSliders/.vscode
+/D:/GitHub/SliderOfCSSMemSliders/node_modules
+
+node_modules/
+package-lock.js
+.gitignore.bak
+
+pages/
+dist/
+
+pages
