@@ -20,14 +20,15 @@ body {
   @media all and (min-width: 1200px) {
     grid-template-columns: 1fr 80vw;
   }
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 1000px) {
     grid-template-columns: 1fr 70vw;
   }
-  @media (max-aspect-ratio: 1/1) {
-    grid-template-rows: 80vw 6rem 1fr;
-    grid-template-columns: 98vh;
+  @media (max-aspect-ratio: 1/2) {
+    grid-template-rows: 40vh auto 1fr;
+    grid-template-columns: auto;
     grid-template-areas: 'slider' 'desc' 'label-slider';
   }
+  overflow: hidden;
 }
 .desc {
   grid-area: desc;
@@ -42,6 +43,9 @@ body {
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
   border: 1px solid rgba(255, 255, 255, 0.07);
+  @media (max-aspect-ratio: 1/2) {
+    max-width: 90vw;
+  }
 }
 .labels {
   grid-area: label-slider;
@@ -51,6 +55,13 @@ body {
   padding: 0 2rem;
   overflow-y: auto;
   min-height: 10px;
+  background-color: #111213ff;
+  @media (max-aspect-ratio: 1/2) {
+    margin: 1rem;
+    max-width: 90vw;
+    min-height: 10px;
+    overflow: scroll;
+  }
 }
 
 .slide {
@@ -61,14 +72,6 @@ input {
   grid-area: radio;
 }
 
-input:checked + .slide,
-input:checked + .slide + .desc {
-  display: block;
-}
-input:not(:checked) + .slide,
-input:not(:checked) + .slide + .desc {
-  display: none;
-}
 label {
   display: flex;
   flex-direction: row;
@@ -85,6 +88,7 @@ label {
   -webkit-backdrop-filter: blur(8.5px);
   border: 1px solid rgba(255, 255, 255, 0.07);
   transition: all 0.3 ease;
+  cursor: pointer;
 }
 
 label:hover {
@@ -95,7 +99,9 @@ label:hover {
   z-index: 2;
   .control {
     color: $blue;
+    transition: all 0.3 ease;
   }
+  transition: all 0.3 ease;
 }
 
 label:active,
@@ -107,7 +113,9 @@ label.active {
   z-index: 2;
   .control {
     color: $dark-blue;
+    transition: all 0.3 ease;
   }
+  transition: all 0.3 ease;
 }
 
 input:checked ~ labels.label {

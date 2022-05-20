@@ -3,14 +3,6 @@
 :root {
   --aspect-ratio: 16/9;
 }
-.slide {
-  /*   width: 70vw;
-  height: 39.375vw;
-  max-height: 70vh;
-  max-width: 124.4vh; */
-
-  position: stiky;
-}
 
 .slide > :first-child {
   width: 100%;
@@ -31,5 +23,66 @@
   position: absolute;
   top: 0;
   left: 0;
+
   //height: 100%;
 }
+.desc {
+  position: relative;
+}
+input:checked + .slide,
+input:checked + .slide + .desc {
+  transition: opacity 0.3s;
+  opacity: 1;
+  display: block;
+}
+input:not(:checked) + .slide,
+input:not(:checked) + .slide + .desc {
+  display: block;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+input:checked + .slide,
+input:checked + .slide + .desc {
+  transition: opacity 0.3s;
+  opacity: 1;
+  display: block;
+}
+
+/* input:checked + .slide iframe,
+input:checked + .slide + .desc {
+  animation-name: on; // new animation name
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+@keyframes on {
+  from {
+    margin-top: 100%;
+    z-index: -1;
+  }
+  to {
+    margin-top: 0%;
+    z-index: -1;
+  }
+}
+
+.slide {
+  overflow: hidden;
+}
+
+input:not(:checked) + .slide,
+input:not(:checked) + .slide + .desc {
+  animation-name: off; // new animation name
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+@keyframes off {
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+} */
