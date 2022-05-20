@@ -1,32 +1,35 @@
 @import './vars.scss';
 
+:root {
+  --aspect-ratio: 16/9;
+}
 .slide {
-  width: 70vw;
+  /*   width: 70vw;
   height: 39.375vw;
   max-height: 70vh;
-  max-width: 124.4vh;
+  max-width: 124.4vh; */
+
+  position: stiky;
 }
 
-.arrow {
-  cursor: pointer;
+.slide > :first-child {
+  width: 100%;
+}
+.slide > img {
+  height: auto;
+}
+
+.slide {
+  position: relative;
+}
+.slide::before {
+  content: '';
+  display: block;
+  padding-bottom: calc(100% / (var(--aspect-ratio)));
+}
+.slide > :first-child {
   position: absolute;
-  top: 50%;
-  margin-top: -35px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-#arrow-left {
-  border-width: 20px 30px 20px 0;
-  border-color: transparent #fff transparent transparent;
+  top: 0;
   left: 0;
-  margin-left: 20px;
-}
-
-#arrow-right {
-  border-width: 20px 0 20px 30px;
-  border-color: transparent transparent transparent #fff;
-  right: 0;
-  margin-right: 20px;
+  //height: 100%;
 }
